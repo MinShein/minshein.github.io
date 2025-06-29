@@ -1,52 +1,186 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />    
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>My Diary</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			border: 0;
+			padding: 0;
+			content: '';
+			box-sizing: border-box;
+			user-select: none;
+		}
+		.container{
+			display: block;
+			position: absolute;
+			width: 100%;
+			min-height: 100%;
+			background-color: #FF90BB;
+			z-index: -1;
+		}
+		.pg-cover:before {
+			position: absolute;
+			right: -30px;
+			top: -30px;
+			width: 45vw;
+			height: 55vh;
+			content: '';
+			border-top: 10px solid #333446;
+			border-right: 10px solid #333446;
+			border-bottom: 10px solid #333446;
+			border-top-right-radius: 15px;
+			border-bottom-right-radius: 15px;
+			z-index: -1;
+		}
+		.pg-cover {
+			position: absolute;
+			top: 25vh;
+			left: 25vw;
+			width: 50vw;
+			height: 50vh;
+			background-color: #FFFFFF;
+			border-radius: 15px;
+			z-index: 1;
+			box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+		}
+		.pg-cover:after {
+			position: absolute;
+			right: 5vw;
+			top: 50vh;
+			content: '';
+			border-right: 80px solid #FFFFFF;
+			border-bottom-right-radius: 15px;
+			border-bottom-left-radius: 15px;
+			border-bottom: 80px solid transparent;
+		}
+		.open-quote {
+			position: absolute;
+			color: #333446;
+			top: -6vh;
+			left: 2.5vw;
+			font-family: sans-serif;
+			font-size: 5rem;
+			font-weight: lighter;
+			transform: scale(2,2);
+		}
+		.quote-box {
+			position: absolute;
+			top: 10vh;
+			left: 5vw;
+			width: 30vw;
+			height: 20vh;
+		}
+		@font-face {
+  			font-family: pretty;
+  			src: url(AirtravelerspersonaluseBdit-ow59x.otf);
+		}
+		.quote-box p,span {
+			font-family: pretty;
+			font-style: italic;
+			font-size: 40px;
+			text-align: justify;
+			line-height: 1.0;
+		}
+		.quote-box p {
+			color: #333446;
+			font-size: 25px;
+		}
+		.quote-box span {
+			color: #FF90BB;
+		}
+		.close-quote {
+			position: absolute;
+			text-align: center;
+			top: 2vh;
+			right: 30vh;
+			width: 10vw;
+			height: 20vh;
+		}
+		.close-quote span {
+			font-size: 20rem;
+			color: #FF90BB;
+			opacity: 0.5;
+		}
+		.writer-quote {
+			position: absolute;
+			text-align: left;
+			bottom: 8vh;
+			left: 5vw;
+		}
+		.writer-quote p {
+			font-family: pretty;
+			font-size: 20px;
+			color: #333446;
+		}
+		.writer-quote span {
+			font-family: TimesNewRoman;
+			font-size: 13px;
+			color: #F08080;
+			font-weight: bolder;
+		}
+		@media screen and (min-width: 300px) and (max-width: 1000px) {
+			.open-quote  {
+				line-height: 0.5;
+			}
+			.quote-box {
+				width: 45vw;
+				left: 2.5vw;
+			}
+  			p,span{
+    			font-size: 2rem;
+    			line-height: 1.5;
+  			}
+  			.close-quote {
+  				display: none;
+  			}
+		}
+		@media screen and (min-width: 600px) and (max-width: 1000px) {
+			.quote-box {
+				width: 45vw;
+				left: 2.5vw;
+			}
+  			p,span{
+    			font-size: 1.5rem;
+    			line-height: 1;
+  			}
+  			.close-quote {
+  				display: none;
+  			}
+  			.writer-quote {
+  				left: 2.5vw;
+  				bottom: 0;
+  			}
+  			.pg-cover:before {
+  				top: -20px;
+  				right: -20px;
+  			}
+  			.pg-cover:after {
+				border-right: 40px solid #FFFFFF;
+				border-bottom: 40px solid transparent;  				
+  			}			
+		}
+	</style>
 </head>
 <body>
-    <div class="container">
-        <div class="short-intro">
-            <div class="bar">
-                <div class="options">
-                    <h3>Portfolio</h3>
-                </div>
-                <div class="menu">
-                    <div class="line"></div>
-                    <div class="line"></div>
-                    <div class="line"></div>
-                </div>
-            </div>
-            <div class="bar">
-                <span>Who Am I?</span>
-                <h1>About Me</h1>
-                <p>
-                    A system programmer and I love Haskell. I am very good at self learning.
-                    I skilled up myself with passionate and learning from Udemy.
-                </p>
-            </div>
-            <div class="bar">
-                <span>Contact Me 
-                    <a href="https://minshein.github.io">
-                        <i class="fa-brands fa-github"></i>
-                    </a>
-                    <a href="https://www.facebook.com/profile.php?id=61550595100198">
-                        <i class="fa-brands fa-facebook"></i>
-                    </a>
-                </span>
-            </div>            
-        </div>
-        <div class="header">
-            <h1>Hi!</h1>
-            <h1>I am Minry Thuta Shein</h1><br/>
-            <span>System Programmer</span>
-            <div class="visit-myworks">
-                <span>Visit My Works</span>
-            </div>
-        </div>
-    </div>
+	<div class="container">
+		<div class="pg-cover">
+			<span class="open-quote">“</span>
+			<div class="quote-box">
+				<p>Trust <span>yourself</span></p>
+				<p>work <span>hard</span></p>
+				<p>never <span>give up</span></p>
+			</div>
+			<div class="close-quote">
+				<span>“</span>
+			</div>
+			<div class="writer-quote">
+				<p>Min Thuta Shein</p>
+				<span>30.6.2025</span>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

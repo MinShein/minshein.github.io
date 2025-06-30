@@ -17,15 +17,15 @@ let offsetX,offsetY;
 page.addEventListener(
 	"touchstart",
 	function(event){
-		offsetY = event.clientY - labulabu.offsetTop;
-		offsetX = event.clientX - labulabu.offsetLeft;
+		offsetY = event.touches[0].clientY;
+		offsetX = event.touches[0].clientX;
 	}
 );
 
 page.addEventListener(
-	"touchmove",
+	"touchend",
 	function(event){
-		labulabu.style.top = (event.clientY - offsetY)+"px";
-		labulabu.style.left = (event.clientX - offsetX)+"px";
+		labulabu.style.top = (event.changedTouches[0].clientY - offsetY)+"px";
+		labulabu.style.left = (event.changedTouches[0].clientX - offsetX) +"px";
 	}
 );

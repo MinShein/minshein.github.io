@@ -11,3 +11,10 @@ page.addEventListener('scroll',function(){
 	}
 	run_bubu.transition = "left 0.5s";
 });
+
+labulabu.addEventListener('dragend',function(event){
+  console.log(event.clientX);
+  console.log(event.clientY);
+  labulabu.style.top = event.clientX+"px";
+  labulabu.style.left = event.clientY+"px";
+});

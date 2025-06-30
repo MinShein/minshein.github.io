@@ -23,7 +23,7 @@ page.addEventListener(
 );
 
 page.addEventListener(
-	"touchend",
+	"touchmove",
 	function(event){
 		labulabu.style.top = (event.changedTouches[0].clientY - offsetY)+"px";
 		labulabu.style.left = (event.changedTouches[0].clientX - offsetX) +"px";

@@ -7,5 +7,5 @@ page.onscroll = function(){
 		}else{
 			labulabu.style.left = page.scrollY+"px";
 		}
-		labulabu.style.transition = "left 3s";		
+		labulabu.style.transition = "left 1s";		
 };

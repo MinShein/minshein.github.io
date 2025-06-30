@@ -18,7 +18,7 @@ if (/Mobi|Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(navigator.use
     function(event) {
       labulabuStyle.top = (event.changedTouches[0].clientY - offsetY) + "px";
       labulabuStyle.left = (event.changedTouches[0].clientX - offsetX) + "px";
-      labulabuStyle.transition = "all 1s ease-out";
+      labulabuStyle.transition = "all 0.2s ease-out";
     }
   );
 } else {

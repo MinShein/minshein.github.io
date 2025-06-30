@@ -9,7 +9,7 @@ page.addEventListener('scroll',function(){
 	if(page.scrollY == 0){
 		run_bubu.left = "2.5vw";
 	}
-	run_bubu.transition = "left 0.5s";
+	run_bubu.transition = "left 1s";
 });
 
 let offsetX,offsetY;
@@ -27,5 +27,6 @@ page.addEventListener(
 	function(event){
 		labulabu.style.top = (event.changedTouches[0].clientY - offsetY)+"px";
 		labulabu.style.left = (event.changedTouches[0].clientX - offsetX) +"px";
+		labulabu.style.transition = "all 1s ease-out";
 	}
 );

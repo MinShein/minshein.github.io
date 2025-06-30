@@ -2,17 +2,8 @@ var page = window;
 var labulabu = document.getElementById('labulabu');
 var run_bubu = labulabu.style;
 
-page.addEventListener('scroll',function(){
-	if(page.scrollY <= (page.innerWidth - labulabu.offsetWidth)){
-		run_bubu.left = ((page.scrollY / page.innerWidth) * 100) +"vw";
-	}
-	if(page.scrollY == 0){
-		run_bubu.left = "2.5vw";
-	}
-	run_bubu.transition = "left 1s";
-});
-
-let offsetX,offsetY;
+if (/Mobi|Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(navigator.userAgent)) {
+    let offsetX,offsetY;
 
 page.addEventListener(
 	"touchstart",
@@ -30,3 +21,14 @@ page.addEventListener(
 		labulabu.style.transition = "all 1s ease-out";
 	}
 );
+} else {
+page.addEventListener('scroll',function(){
+	if(page.scrollY <= (page.innerWidth - labulabu.offsetWidth)){
+		run_bubu.left = ((page.scrollY / page.innerWidth) * 100) +"vw";
+	}
+	if(page.scrollY == 0){
+		run_bubu.left = "2.5vw";
+	}
+	run_bubu.transition = "all 1s ease-in";
+});  
+}

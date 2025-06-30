@@ -1,11 +1,13 @@
 var page = window;
 var labulabu = document.getElementById('labulabu');
+var run_bubu = labulabu.style;
 
-page.onscroll = function(){
-		if(page.innerHeight == page.scrollY || page.scrollY >= page.innerWidth) {
-			labulabu.style.left = "0px";
-		}else{
-			labulabu.style.left = page.scrollY+"px";
-		}
-		labulabu.style.transition = "left 1s";		
-};
+page.addEventListener('scroll',function(){
+	if(page.scrollY <= (page.innerWidth - labulabu.offsetWidth)){
+		run_bubu.left = ((page.scrollY / page.innerWidth) * 100) +"vw";
+	}
+	if(page.scrollY == 0){
+		run_bubu.left = "2.5vw";
+	}
+	run_bubu.transition = "left 0.5s";
+});

@@ -12,9 +12,20 @@ page.addEventListener('scroll',function(){
 	run_bubu.transition = "left 0.5s";
 });
 
-labulabu.addEventListener('dragend',function(event){
-  console.log(event.clientX);
-  console.log(event.clientY);
-  labulabu.style.top = event.clientX+"px";
-  labulabu.style.left = event.clientY+"px";
-});
+let offsetX,offsetY;
+
+page.addEventListener(
+	"touchstart",
+	function(event){
+		offsetY = event.clientY - labulabu.offsetTop;
+		offsetX = event.clientX - labulabu.offsetLeft;
+	}
+);
+
+page.addEventListener(
+	"touchmove",
+	function(event){
+		labulabu.style.top = (event.clientY - offsetY)+"px";
+		labulabu.style.left = (event.clientX - offsetX)+"px";
+	}
+);

@@ -4,7 +4,7 @@ const labulabuStyle = labulabu.style;
 
 if (/Mobi|Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(navigator.userAgent)) {
   let offsetX, offsetY;
-
+  document.body.style.overflowY = "hidden";
   page.addEventListener(
     "touchstart",
     function(event) {

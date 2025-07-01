@@ -26,9 +26,9 @@ if (/Mobi|Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(navigator.use
   page.addEventListener(
     "touchend",
     function(event) {
-      labulabuStyle.top = labulabu.offsetTop+"px";
-			labulabuStyle.left = labulabu.offsetLeft+"px";
-			labulabuStyle.transition = "all 0.5s ease-out";
+      	labulabuStyle.top = labulabu.offsetTop+"px";
+	labulabuStyle.left = labulabu.offsetLeft+"px";
+	labulabuStyle.transition = "all 0.5s ease-out";
     }
   );  
 } else {

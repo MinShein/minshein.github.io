@@ -10,8 +10,8 @@ if (/Mobi|Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(navigator.use
     "touchmove",
     function(event) {
       event.preventDefault();
-      labulabuStyle.top = event.changedTouches[0].clientY + "px";
-      labulabuStyle.left = event.changedTouches[0].clientX + "px";
+      labulabuStyle.top = labulabu.getBoundingRect().top+event.touches[0].clientY + "px";
+      labulabuStyle.left = labulabu.getBoundingRect().left+event.touches[0].clientX + "px";
       labulabuStyle.transition = "all 0.5s ease-out";
     }
   );  

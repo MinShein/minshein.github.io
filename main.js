@@ -5,30 +5,13 @@ const labulabuStyle = labulabu.style;
 if (/Mobi|Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(navigator.userAgent)) {
   let offsetX, offsetY;
   document.body.style.overflowY = "hidden";
-  
-  page.addEventListener(
-    "touchstart",
-    function(event) {
-      offsetY = event.touches[0].clientY;
-      offsetX = event.touches[0].clientX;
-    }
-  );
-
+	
   page.addEventListener(
     "touchmove",
     function(event) {
-      labulabuStyle.top = (event.changedTouches[0].clientY - offsetY) + "px";
-      labulabuStyle.left = (event.changedTouches[0].clientX - offsetX) + "px";
+      labulabuStyle.top = (event.changedTouches[0].clientY - (labulabu.offsetHeight/2)) + "px";
+      labulabuStyle.left = (event.changedTouches[0].clientX - (labulabu.offsetWidht/2)) + "px";
       labulabuStyle.transition = "all 0.5s ease-out";
-    }
-  );
-
-  page.addEventListener(
-    "touchend",
-    function(event) {
-      	labulabuStyle.top = labulabu.offsetTop+"px";
-	labulabuStyle.left = labulabu.offsetLeft+"px";
-	labulabuStyle.transition = "all 0.5s ease-out";
     }
   );  
 } else {

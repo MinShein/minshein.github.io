@@ -5,7 +5,6 @@ const labulabuStyle = labulabu.style;
 if (/Mobi|Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(navigator.userAgent)) {
   let offsetX, offsetY;
   document.body.style.overflowY = "hidden";
-  labulabu.style.top = -(labulabu.offsetTop * 2)+"px";
   
   page.addEventListener(
     "touchstart",
@@ -27,8 +26,8 @@ if (/Mobi|Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(navigator.use
   page.addEventListener(
     "touchend",
     function(event) {
-      labulabuStyle.top = "15px";
-      labulabuStyle.left = "15px";
+      labulabuStyle.top = -((labulabu.offsetTop/page.innerHeight)*100)+"vh";
+      labulabuStyle.left = ((labulabu.offsetTop/page.innerWidth)*100)+"vw";
       labulabuStyle.transition = "all 0.5s ease-out";
     }
   );  

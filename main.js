@@ -7,7 +7,7 @@ if (/Mobi|Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(navigator.use
   document.body.style.overflowX = "hidden";
 	
   page.addEventListener(
-    "touchmove",
+    "touchstart",
     function(event) {
       event.preventDefault();
       labulabuStyle.top = (event.touches[0].clientY - (labulabu.offsetHeight/2)) + "px";

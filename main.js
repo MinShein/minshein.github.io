@@ -27,8 +27,8 @@ if (/Mobi|Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(navigator.use
   page.addEventListener(
     "touchend",
     function(event) {
-      labulabuStyle.top = offsetY + "px";
-      labulabuStyle.left = offsetX + "px";
+      labulabuStyle.top = "15px";
+      labulabuStyle.left = "15px";
       labulabuStyle.transition = "all 0.5s ease-out";
     }
   );  

@@ -18,7 +18,7 @@ if (/Mobi|Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(navigator.use
     function(event) {
       labulabuStyle.top = (event.changedTouches[0].clientY - offsetY) + "px";
       labulabuStyle.left = (event.changedTouches[0].clientX - offsetX) + "px";
-      labulabuStyle.transition = "all 0.2s ease-out";
+      labulabuStyle.transition = "all 0.5s ease-out";
     }
   );
 } else {
@@ -29,6 +29,6 @@ if (/Mobi|Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(navigator.use
     if (page.scrollY === 0) {
       labulabuStyle.left = "2.5vw";
     }
-    labulabuStyle.transition = "left 1s";
+    labulabuStyle.transition = "left 0.5s";
   });
 }

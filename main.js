@@ -7,11 +7,11 @@ if (/Mobi|Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(navigator.use
   document.body.style.overflowX = "hidden";
 	
   page.addEventListener(
-    "touchstart",
+    "touchmove",
     function(event) {
       event.preventDefault();
-      labulabuStyle.top = (event.touches[0].clientY - (labulabu.offsetHeight/2)) + "px";
-      labulabuStyle.left = (event.touches[0].clientX - (labulabu.offsetWidht/2)) + "px";
+      labulabuStyle.top = event.touches[0].clientY + "px";
+      labulabuStyle.left = event.touches[0].clientX + "px";
       labulabuStyle.transition = "all 0.5s ease-out";
     }
   );  

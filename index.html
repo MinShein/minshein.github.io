@@ -144,6 +144,45 @@
 					drop-shadow(5px -5px #7965C1) 
 					drop-shadow(-5px 5px #FF90BB) 
 					drop-shadow(-5px -5px #7965C1);
+	}
+	.greeting_quote {
+		position: fixed;
+		width: 60vw;
+		height: 50vh;
+		top: 25vh;
+		left: 20vw;
+		background-color: #FF90BB;
+		border: 10px solid #FFFFFF;
+		z-index: 1;
+		opacity: 0;
+	}
+	.greeting_quote button[class='gq_close'] {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		width: 20px;
+		height: 20px;
+		font-size: 1rem;
+		color: #FFFFFF;
+		text-align: center;
+		font-family: sans-serif;
+		background-color: #7965C1;
+		border: 1px solid #FFFFFF;
+		border-radius: 20px;
+	}
+	.greeting_quote p {
+		position: absolute;
+		top: 50px;
+		text-align: center;
+		font-family: pretty;
+		font-size: 1.5rem;
+		font-style: italic;
+		color: #7965C1;
+		font-weight: lighter;
+	}
+	.greeting_quote span {
+		font-size: 1.2rem;
+		color: #FFFFFF;
 	}		
 		@media screen and (min-width: 300px) and (max-width: 1000px) {
 			.open-quote  {
@@ -224,6 +263,14 @@
 		</div>
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#9B7EBD" fill-opacity="1" d="M0,256L48,234.7C96,213,192,171,288,176C384,181,480,235,576,256C672,277,768,267,864,224C960,181,1056,107,1152,117.3C1248,128,1344,224,1392,272L1440,320L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
 	</div>
+	<div id="gq_box" class="greeting_quote">
+			<button id="gq_close" class="gq_close">X</button>
+			<p>
+				“Don't watch the clock; do what it does. Keep going.” <br/>
+				<span>Sam Levenson</span> <br/>
+				<span style="font-family: TimesNewRoman; font-size: 1rem; color: #FFFFFF;">3.7.2025</span> 
+			</p>
+	</div>	
 	<div class="container-2">
 		<img id="labulabu" class="labulabu" src="labulabu.png" draggable="true"/>
 	</div>

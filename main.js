@@ -1,6 +1,8 @@
 const page = window;
 const labulabu = document.getElementById('labulabu');
 const labulabuStyle = labulabu.style;
+const gq_box = document.getElementById('gq_box');
+const gq_close = document.getElementById('gq_close');
 
 if (/Mobi|Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(navigator.userAgent)) {
   document.body.style.overflowY = "hidden";
@@ -26,3 +28,13 @@ if (/Mobi|Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(navigator.use
     labulabuStyle.transition = "left 0.5s";
   });
 }
+
+window.onload = function() {
+	gq_box.style.opacity = "1";
+	gq_box.style.transition = "opacity 1.5s ease-in";
+};
+
+gq_close.addEventListener('click',function(){
+	gq_box.style.opacity = "0";
+	gq_box.style.transition = "opacity 1.5 ease-out";
+});
